@@ -1,6 +1,9 @@
 import os
 import openai
 import streamlit as st
+import dotenv
+
+dotenv.load_dotenv()
 
 prompt = """
 You are a customer support agent and your role is to categorise the incoming request into one of the following categories:
@@ -31,7 +34,9 @@ Response:
 """
 
 # openai.api_key = os.getenv("OPENAI_API_KEY")
-openai.api_key = "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"
+
+# Load the API key from the .env file
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 if __name__ == "__main__":
 
